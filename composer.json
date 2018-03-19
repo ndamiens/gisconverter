@@ -2,7 +2,7 @@
     "name": "ndamiens/gisconverter",
     "description": "A php library to convert vector geometries between different formats",
     "minimum-stability": "stable",
-    "license" : "BSD",
+    "license" : "BSD-Source-Code",
     "require": {
         "php": ">=5.3.0"
     },
