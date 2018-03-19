@@ -3,8 +3,6 @@
 namespace Symm\Gisconverter\Geometry;
 
 use Symm\Gisconverter\Exceptions\InvalidFeature;
-use Symm\Gisconverter\Exceptions\OutOfRangeLon;
-use Symm\Gisconverter\Exceptions\OutOfRangeLat;
 use Symm\Gisconverter\Exceptions\UnimplementedMethod;
 
 class Point extends Geometry
@@ -22,14 +20,6 @@ class Point extends Geometry
 
         $lon = $coords[0];
         $lat = $coords[1];
-
-        if (!$this->checkLon($lon)) {
-            throw new OutOfRangeLon($lon);
-        }
-
-        if (!$this->checkLat($lat)) {
-            throw new OutOfRangeLat($lat);
-        }
 
         $this->lon = (float) $lon;
         $this->lat = (float) $lat;
