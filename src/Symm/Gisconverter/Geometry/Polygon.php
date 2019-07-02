@@ -11,11 +11,13 @@ class Polygon extends Collection
     {
         $outer = $components[0];
 
-        foreach (array_slice($components, 1) as $inner) {
-            if (!$outer->contains($inner)) {
-                throw new InvalidFeature(__CLASS__, "Polygon inner rings must be enclosed in outer ring");
-            }
-        }
+        // Disabled for my use maybe false positive
+        //
+        //foreach (array_slice($components, 1) as $inner) {
+        //    if (!$outer->contains($inner)) {
+        //        throw new InvalidFeature(__CLASS__, "Polygon inner rings must be enclosed in outer ring");
+        //    }
+        //}
 
         foreach ($components as $comp) {
             if (!($comp instanceof LinearRing)) {
